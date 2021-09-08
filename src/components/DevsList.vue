@@ -1,7 +1,14 @@
 <template>
   <div>
+    <div>Selected index: <span data-testid="selected-dev-index">{{ index }}</span></div>
     <ul>
-      <li v-for="dev in devs" :key="dev.id" style="cursor: pointer" @click="index = dev.id">
+      <li
+        v-for="dev in devs"
+        :key="dev.id"
+        style="cursor: pointer"
+        data-testid="dev-item"
+        @click="index = dev.id"
+      >
         {{ dev.name }}
         <div v-if="dev.id === index">
           <hr>
